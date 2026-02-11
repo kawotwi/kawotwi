@@ -20,19 +20,42 @@
   transition: var(--header-transition);
   background-color: transparent;
   backdrop-filter: none;
+  /* High-contrast over video: text remains readable during motion */
+  --nav-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 0 1px rgba(0, 0, 0, 0.9);
 }
 
-/* Condensed state — unified dark palette */
+/* Condensed state — solid background, no shadow needed */
 .sticky-header.is-condensed {
   height: var(--header-height-condensed);
   background-color: rgba(13, 13, 13, 0.95);
   backdrop-filter: blur(12px);
 }
 
-/* On dark-theme pages: header uses same dark as content */
+.sticky-header.is-condensed .header-logo,
+.sticky-header.is-condensed .header-nav a {
+  text-shadow: none;
+}
+
+.sticky-header.is-condensed .header-cta .btn {
+  text-shadow: none;
+  background: #000;
+  border-color: transparent;
+}
+
+.sticky-header.is-condensed .header-cta .btn:hover {
+  background: #222;
+}
+
+/* On dark-theme pages: header uses same dark as content; no shadow needed */
 body.theme-dark .sticky-header {
   background-color: rgba(13, 13, 13, 0.95);
   backdrop-filter: blur(12px);
+}
+
+body.theme-dark .sticky-header .header-logo,
+body.theme-dark .sticky-header .header-nav a,
+body.theme-dark .sticky-header .header-cta .btn {
+  text-shadow: none;
 }
 
 body.theme-dark .sticky-header.is-condensed {
@@ -54,11 +77,13 @@ body.theme-light .sticky-header.is-condensed .header-nav a,
 body.theme-light .sticky-header.is-condensed .header-cta .btn,
 body.theme-light .sticky-header.is-condensed .theme-toggle-icon {
   color: #1a1a1a;
+  text-shadow: none;
 }
 
 body.theme-light .sticky-header.is-condensed .header-cta .btn {
   background: #1a1a1a;
   color: #fff;
+  border-color: transparent;
 }
 
 body.theme-light .sticky-header.is-condensed .header-cta .btn:hover {
@@ -96,8 +121,13 @@ body.theme-light .sticky-header.is-condensed .header-cta .btn:hover {
   object-fit: contain;
 }
 
-/* Toggle icon: white on dark/transparent header (default) */
+/* Toggle icon: white with shadow over video; no shadow when condensed */
 .sticky-header #theme-toggle img {
+  filter: brightness(0) invert(1);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8)) brightness(0) invert(1);
+}
+
+.sticky-header.is-condensed #theme-toggle img {
   filter: brightness(0) invert(1);
 }
 
@@ -112,6 +142,7 @@ body.theme-light .sticky-header.is-condensed #theme-toggle img {
   text-decoration: none;
   letter-spacing: 0.02em;
   line-height: 1.2;
+  text-shadow: var(--nav-text-shadow);
 }
 
 .sticky-header .header-logo span:first-child {
@@ -144,6 +175,7 @@ body.theme-light .sticky-header.is-condensed #theme-toggle img {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: opacity 0.2s ease;
+  text-shadow: var(--nav-text-shadow);
 }
 
 .sticky-header .header-nav a:hover,
@@ -168,12 +200,13 @@ body.theme-light .sticky-header.is-condensed #theme-toggle img {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #fff;
-  background: #000;
-  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 2px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-shadow: var(--nav-text-shadow);
 }
 
 .sticky-header .header-cta .btn:hover {
