@@ -3,98 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Robotics Portfolio - Your Name">
-    <title>Your Name - Robotics Portfolio</title>
+    <meta name="description" content="Portfolio - Your Name">
+    <title>Your Name - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/hero.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="nav-title">Your Name</h1>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Projects</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
+    <!-- Sticky Header (1820-style) -->
+    <header class="sticky-header">
+        <a href="index.html" class="header-logo">
+            <span>1820</span>
+            <span>PRODUCTIONS</span>
+        </a>
+        <nav>
+            <ul class="header-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="contact.html" class="btn">Let's Talk</a>
+            <button type="button" class="btn menu-toggle" aria-label="Menu">Menu</button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Content -->
-    <main class="container">
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <a href="projects/project-1.html">
-                    <img src="assets/placeholder.jpg" alt="Project 1" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Project Title 1</h3>
-                        <p class="project-description">Brief description of your first robotics project goes here.</p>
-                        <div class="project-tags">
-                            <span class="tag">ROS2</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Computer Vision</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <a href="projects/project-2.html">
-                    <img src="assets/placeholder.jpg" alt="Project 2" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Project Title 2</h3>
-                        <p class="project-description">Brief description of your second robotics project goes here.</p>
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">SLAM</span>
-                            <span class="tag">Navigation</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <a href="projects/project-3.html">
-                    <img src="assets/placeholder.jpg" alt="Project 3" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Project Title 3</h3>
-                        <p class="project-description">Brief description of your third robotics project goes here.</p>
-                        <div class="project-tags">
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">ROS</span>
-                            <span class="tag">Gazebo</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Project Card 4 -->
-            <div class="project-card">
-                <a href="projects/project-4.html">
-                    <img src="assets/placeholder.jpg" alt="Project 4" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Project Title 4</h3>
-                        <p class="project-description">Brief description of your fourth robotics project goes here.</p>
-                        <div class="project-tags">
-                            <span class="tag">Embedded Systems</span>
-                            <span class="tag">Control Systems</span>
-                            <span class="tag">PCB Design</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Add more project cards as needed -->
+    <!-- Full-screen Hero with Video Carousel -->
+    <section class="hero-section" aria-label="Hero">
+        <div class="hero-video-wrap">
+            <!-- Slides and fallback injected by js/hero.js -->
         </div>
-    </main>
+        <div class="hero-overlay" aria-hidden="true"></div>
 
-    <!-- Footer -->
+        <div class="hero-carousel-overlay">
+            <a href="#" class="hero-carousel-title-link">
+                <h2 class="hero-carousel-title">Project Title</h2>
+            </a>
+            <p class="hero-carousel-description">Short description</p>
+            <div class="hero-carousel-controls">
+                <button type="button" class="hero-carousel-prev" aria-label="Previous video">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <span class="hero-carousel-indicator">
+                    <span class="current">01</span>
+                    <span class="separator">|</span>
+                    <span class="total">04</span>
+                </span>
+                <button type="button" class="hero-carousel-next" aria-label="Next video">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+    </section>
+
+    <!-- Portfolio Content (below hero) -->
+    <div class="portfolio-content">
+        <section id="projects" class="content-section">
+            <h2>Projects</h2>
+            <p>Scroll down to explore featured work. Use the hero carousel above to jump into individual projects.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <a href="projects/project-1.html">
+                        <img src="assets/placeholder.jpg" alt="Project 1" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Project Title 1</h3>
+                            <p class="project-description">Brief description of your first project.</p>
+                            <div class="project-tags">
+                                <span class="tag">ROS2</span>
+                                <span class="tag">Python</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="projects/project-2.html">
+                        <img src="assets/placeholder.jpg" alt="Project 2" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Project Title 2</h3>
+                            <p class="project-description">Brief description of your second project.</p>
+                            <div class="project-tags">
+                                <span class="tag">C++</span>
+                                <span class="tag">SLAM</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="projects/project-3.html">
+                        <img src="assets/placeholder.jpg" alt="Project 3" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Project Title 3</h3>
+                            <p class="project-description">Brief description of your third project.</p>
+                            <div class="project-tags">
+                                <span class="tag">ML</span>
+                                <span class="tag">ROS</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="projects/project-4.html">
+                        <img src="assets/placeholder.jpg" alt="Project 4" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Project Title 4</h3>
+                            <p class="project-description">Brief description of your fourth project.</p>
+                            <div class="project-tags">
+                                <span class="tag">Embedded</span>
+                                <span class="tag">Control</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="about-preview" class="content-section">
+            <h2>About</h2>
+            <p>Learn more about my background and approach. <a href="about.html">Read full about page &rarr;</a></p>
+        </section>
+    </div>
+
     <footer class="footer">
         <p>Made with ❤️ by <strong>Your Name</strong></p>
     </footer>
+
+    <script type="module" src="js/hero.js"></script>
 </body>
 </html>
