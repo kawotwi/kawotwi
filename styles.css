@@ -418,6 +418,7 @@ body {
 /* Print Styles for Resume */
 @media print {
     .navbar,
+    .sticky-header,
     .footer {
         display: none;
     }

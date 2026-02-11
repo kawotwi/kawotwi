@@ -1,0 +1,113 @@
+/* ===== Dark minimalist theme (no-video pages) ===== */
+
+body.theme-dark {
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+}
+
+body.theme-dark .container,
+body.theme-dark .about-container,
+body.theme-dark .contact-container,
+body.theme-dark .resume-container,
+body.theme-dark .project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--header-height, 80px) + 2rem) 2rem 3rem;
+  min-height: calc(100vh - 200px);
+}
+
+body.theme-dark .about-header h1,
+body.theme-dark .contact-header h1,
+body.theme-dark .resume-header h1,
+body.theme-dark .project-header h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+body.theme-dark .about-header p,
+body.theme-dark .contact-header p,
+body.theme-dark .resume-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.theme-dark .about-section h2,
+body.theme-dark .contact-methods h3,
+body.theme-dark .resume-section h2,
+body.theme-dark .project-section h2 {
+  color: #fff;
+  font-size: 1.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+body.theme-dark .about-section p,
+body.theme-dark .about-section ul li,
+body.theme-dark .contact-method p,
+body.theme-dark .resume-section p,
+body.theme-dark .resume-section ul li,
+body.theme-dark .experience-meta,
+body.theme-dark .education-meta,
+body.theme-dark .project-section p,
+body.theme-dark .project-section ul li {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body.theme-dark .skill-category,
+body.theme-dark .contact-method {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+body.theme-dark .skill-category h3,
+body.theme-dark .contact-method h3,
+body.theme-dark .experience-item h3,
+body.theme-dark .education-item h3 {
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+body.theme-dark .contact-method a {
+  color: #aaa;
+}
+
+body.theme-dark .contact-method a:hover {
+  color: #fff;
+}
+
+body.theme-dark .tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e5e5e5;
+}
+
+body.theme-dark .project-detail-image {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .github-link {
+  background: #fff;
+  color: #0a0a0a;
+}
+
+body.theme-dark .github-link:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.theme-dark .footer {
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  body.theme-dark .container,
+  body.theme-dark .about-container,
+  body.theme-dark .contact-container,
+  body.theme-dark .resume-container {
+    padding: 2rem 1rem;
+  }
+}

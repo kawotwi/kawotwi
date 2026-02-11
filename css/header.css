@@ -1,0 +1,150 @@
+/* ===== Unified Sticky Header (site-wide) ===== */
+
+:root {
+  --header-height: 80px;
+  --header-height-condensed: 56px;
+  --header-transition: height 0.35s ease, background-color 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  transition: var(--header-transition);
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+/* Condensed state (scroll > threshold, or on no-video pages via .theme-dark) */
+.sticky-header.is-condensed {
+  height: var(--header-height-condensed);
+  background-color: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+/* On dark-theme pages: header starts dark (no hero video behind it) */
+body.theme-dark .sticky-header {
+  background-color: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+body.theme-dark .sticky-header.is-condensed {
+  background-color: rgba(10, 10, 10, 0.96);
+}
+
+.sticky-header .header-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.sticky-header .header-logo span:first-child {
+  display: block;
+  font-size: 1em;
+}
+
+.sticky-header .header-logo span:last-child {
+  display: block;
+  font-size: 0.45em;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  opacity: 0.95;
+}
+
+.sticky-header .header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-header .header-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.sticky-header .header-nav a:hover,
+.sticky-header .header-nav a.active {
+  opacity: 1;
+}
+
+.sticky-header .header-nav a:not(.active) {
+  opacity: 0.85;
+}
+
+.sticky-header .header-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sticky-header .header-cta .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sticky-header .header-cta .btn:hover {
+  background: #222;
+}
+
+.sticky-header .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+@media (max-width: 768px) {
+  .sticky-header {
+    padding: 0 1rem;
+  }
+
+  .sticky-header .header-nav {
+    display: none;
+  }
+
+  .sticky-header .header-cta {
+    gap: 0.5rem;
+  }
+
+  .sticky-header .header-cta .btn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.65rem;
+  }
+
+  .sticky-header .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,23 +1,7 @@
 import { projectVideos } from '../data/projectVideos.js';
 
-const CONDENSE_SCROLL_THRESHOLD = 50;
-const CAROUSEL_FADE_MS = 500;
-
 function getProjectUrl(slug) {
   return `projects/${slug}.html`;
-}
-
-function initStickyHeader() {
-  const header = document.querySelector('.sticky-header');
-  if (!header) return;
-
-  function updateHeader() {
-    const scrolled = window.scrollY || document.documentElement.scrollTop;
-    header.classList.toggle('is-condensed', scrolled > CONDENSE_SCROLL_THRESHOLD);
-  }
-
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  updateHeader();
 }
 
 function initHeroParallax() {
@@ -194,7 +178,6 @@ function init() {
   buildHeroMarkup();
   initHeroCarousel();
   initCarouselVideoPlayback();
-  initStickyHeader();
   initHeroParallax();
 }
 

@@ -6,20 +6,28 @@
     <meta name="description" content="About - Your Name">
     <title>About - Your Name</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/theme.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="nav-title">Your Name</h1>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Projects</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
+<body class="theme-dark">
+    <header class="sticky-header">
+        <a href="index.html" class="header-logo">
+            <span>KWAMENA</span>
+            <span>PORTFOLIO</span>
+        </a>
+        <nav>
+            <ul class="header-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="contact.html" class="btn">Let's Talk</a>
+            <button type="button" class="btn menu-toggle" aria-label="Menu">Menu</button>
         </div>
-    </nav>
+    </header>
 
     <!-- Main Content -->
     <main class="container">
@@ -108,5 +116,6 @@
     <footer class="footer">
         <p>Made with ❤️ by <strong>Your Name</strong></p>
     </footer>
+    <script src="js/header.js"></script>
 </body>
 </html>
