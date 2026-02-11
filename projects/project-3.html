@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/images.css">
 </head>
-<body class="theme-dark">
+<body class="theme-dark" data-assets-base="../">
+    <!-- start header -->
     <header class="sticky-header">
         <a href="../index.html" class="header-logo">
             <span>KWAMENA</span>
@@ -18,16 +20,30 @@
         <nav>
             <ul class="header-nav">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#projects" class="active">Projects</a></li>
                 <li><a href="../about.html">About</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="header-cta">
+            <button type="button" id="theme-toggle" aria-label="Switch to light mode"></button>
             <a href="../contact.html" class="btn">Let's Talk</a>
-            <button type="button" class="btn menu-toggle" aria-label="Menu">Menu</button>
+            <button type="button" class="btn menu-toggle" aria-label="Open menu">Menu</button>
         </div>
     </header>
+    <div class="nav-drawer-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div class="nav-drawer" id="nav-drawer" aria-label="Mobile navigation">
+        <nav class="nav-drawer-inner">
+            <ul class="nav-drawer-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#projects" class="active">Projects</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- end header -->
 
     <!-- Main Content -->
     <main class="container">
@@ -44,7 +60,7 @@
             </div>
 
             <!-- Featured Image -->
-            <img src="../assets/placeholder.jpg" alt="Project Title" class="project-detail-image">
+            <img src="../assets/placeholder.jpg" alt="Project Title" class="project-detail-image auto-fit-img" loading="lazy">
 
             <!-- Overview -->
             <div class="project-section">
@@ -114,10 +130,19 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- start footer -->
     <footer class="footer">
         <p>Made with ❤️ by <strong>Your Name</strong></p>
+        <div class="footer-social">
+            <a data-social="email" href="#" aria-label="Email"><img src="../assets/icons/email.svg" width="28" height="28" alt="" class="footer-icon"></a>
+            <a data-social="github" href="#" target="_blank" rel="noopener" aria-label="GitHub"><img src="../assets/icons/github.svg" width="28" height="28" alt="" class="footer-icon"></a>
+            <a data-social="linkedIn" href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="../assets/icons/linkedin.svg" width="28" height="28" alt="" class="footer-icon"></a>
+        </div>
     </footer>
+
+    <!-- end footer -->
     <script src="../js/header.js"></script>
+    <script type="module" src="../js/footer-social.js"></script>
+    <script src="../js/theme.js"></script>
 </body>
 </html>

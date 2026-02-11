@@ -382,6 +382,43 @@ body {
     margin-top: 4rem;
 }
 
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+    opacity: 1;
+}
+
+.footer-social .footer-icon {
+    width: 28px;
+    height: 28px;
+    max-width: 32px;
+    max-height: 32px;
+    object-fit: contain;
+    display: block;
+}
+
+body.theme-dark .footer .footer-icon {
+    filter: brightness(0) invert(1);
+}
+
+body.theme-light .footer .footer-icon {
+    filter: brightness(0);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {

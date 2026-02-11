@@ -1,8 +1,31 @@
-/* ===== Dark minimalist theme (no-video pages) ===== */
+/* ===== Unified dark palette (1820-style) ===== */
+:root {
+  --palette-bg-dark: #0d0d0d;
+  --palette-bg-dark-subtle: #141414;
+  --palette-text-primary: #f5f5f5;
+  --palette-text-muted: rgba(255, 255, 255, 0.85);
+  --palette-text-dim: rgba(255, 255, 255, 0.7);
+  --palette-border: rgba(255, 255, 255, 0.1);
+  --palette-border-subtle: rgba(255, 255, 255, 0.08);
+  --palette-accent-gray: #888;
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.05ms !important;
+  }
+}
+
+/* ===== Dark theme (no-video pages + portfolio content default) ===== */
 
 body.theme-dark {
-  background-color: #0a0a0a;
-  color: #e5e5e5;
+  background-color: var(--palette-bg-dark);
+  color: var(--palette-text-primary);
 }
 
 body.theme-dark .container,
@@ -20,7 +43,7 @@ body.theme-dark .about-header h1,
 body.theme-dark .contact-header h1,
 body.theme-dark .resume-header h1,
 body.theme-dark .project-header h1 {
-  color: #fff;
+  color: var(--palette-text-primary);
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -28,16 +51,16 @@ body.theme-dark .project-header h1 {
 body.theme-dark .about-header p,
 body.theme-dark .contact-header p,
 body.theme-dark .resume-header p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--palette-text-muted);
 }
 
 body.theme-dark .about-section h2,
 body.theme-dark .contact-methods h3,
 body.theme-dark .resume-section h2,
 body.theme-dark .project-section h2 {
-  color: #fff;
+  color: var(--palette-text-primary);
   font-size: 1.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid var(--palette-border);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -51,13 +74,13 @@ body.theme-dark .experience-meta,
 body.theme-dark .education-meta,
 body.theme-dark .project-section p,
 body.theme-dark .project-section ul li {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--palette-text-muted);
 }
 
 body.theme-dark .skill-category,
 body.theme-dark .contact-method {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--palette-bg-dark-subtle);
+  border: 1px solid var(--palette-border-subtle);
   border-radius: 8px;
   padding: 1.5rem;
 }
@@ -66,41 +89,94 @@ body.theme-dark .skill-category h3,
 body.theme-dark .contact-method h3,
 body.theme-dark .experience-item h3,
 body.theme-dark .education-item h3 {
-  color: #fff;
+  color: var(--palette-text-primary);
   margin-bottom: 0.75rem;
 }
 
 body.theme-dark .contact-method a {
-  color: #aaa;
+  color: var(--palette-text-muted);
 }
 
 body.theme-dark .contact-method a:hover {
-  color: #fff;
+  color: var(--palette-text-primary);
 }
 
 body.theme-dark .tag {
   background: rgba(255, 255, 255, 0.1);
-  color: #e5e5e5;
+  color: var(--palette-text-primary);
 }
 
 body.theme-dark .project-detail-image {
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--palette-border);
 }
 
 body.theme-dark .github-link {
-  background: #fff;
-  color: #0a0a0a;
+  background: var(--palette-text-primary);
+  color: var(--palette-bg-dark);
 }
 
 body.theme-dark .github-link:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
 }
 
 body.theme-dark .footer {
-  background: #0a0a0a;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.7);
+  background: var(--palette-bg-dark);
+  border-top: 1px solid var(--palette-border-subtle);
+  color: var(--palette-text-muted);
+}
+
+/* Homepage projects section: same unified dark palette */
+body.theme-dark .portfolio-content {
+  background: var(--palette-bg-dark);
+}
+
+body.theme-dark .portfolio-content .content-section h2 {
+  color: var(--palette-text-primary);
+}
+
+body.theme-dark .portfolio-content .content-section p,
+body.theme-dark .portfolio-content .content-section a {
+  color: var(--palette-text-muted);
+}
+
+body.theme-dark .portfolio-content .content-section a:hover {
+  color: var(--palette-text-primary);
+}
+
+/* Project cards (homepage grid) — dark theme */
+body.theme-dark .portfolio-content .project-card,
+body.theme-dark .project-card {
+  background: var(--palette-bg-dark-subtle);
+  border: 1px solid var(--palette-border-subtle);
+  color: inherit;
+}
+
+body.theme-dark .portfolio-content .project-card:hover,
+body.theme-dark .project-card:hover {
+  border-color: var(--palette-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+body.theme-dark .portfolio-content .project-title,
+body.theme-dark .project-title {
+  color: #f5f5f5;
+}
+
+body.theme-dark .portfolio-content .project-description,
+body.theme-dark .project-description {
+  color: var(--palette-text-muted);
+}
+
+body.theme-dark .portfolio-content .project-card a,
+body.theme-dark .project-card a {
+  color: inherit;
+}
+
+body.theme-dark .portfolio-content .project-card .tag,
+body.theme-dark .project-card .tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--palette-text-primary);
 }
 
 @media (max-width: 768px) {
@@ -108,6 +184,164 @@ body.theme-dark .footer {
   body.theme-dark .about-container,
   body.theme-dark .contact-container,
   body.theme-dark .resume-container {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ===== Light theme (user toggle or default on hero page) ===== */
+
+body.theme-light {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body.theme-dark {
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body.theme-light .container,
+body.theme-light .about-container,
+body.theme-light .contact-container,
+body.theme-light .resume-container,
+body.theme-light .project-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--header-height, 80px) + 2rem) 2rem 3rem;
+  min-height: calc(100vh - 200px);
+}
+
+body.theme-light .about-header h1,
+body.theme-light .contact-header h1,
+body.theme-light .resume-header h1,
+body.theme-light .project-header h1 {
+  color: #1a1a1a;
+}
+
+body.theme-light .about-header p,
+body.theme-light .contact-header p,
+body.theme-light .resume-header p {
+  color: #444;
+}
+
+body.theme-light .about-section h2,
+body.theme-light .resume-section h2,
+body.theme-light .project-section h2 {
+  color: #1a1a1a;
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+
+body.theme-light .about-section p,
+body.theme-light .about-section ul li,
+body.theme-light .contact-method p,
+body.theme-light .resume-section p,
+body.theme-light .resume-section ul li,
+body.theme-light .experience-meta,
+body.theme-light .education-meta,
+body.theme-light .project-section p,
+body.theme-light .project-section ul li {
+  color: #444;
+}
+
+body.theme-light .skill-category,
+body.theme-light .contact-method {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.theme-light .skill-category h3,
+body.theme-light .contact-method h3,
+body.theme-light .experience-item h3,
+body.theme-light .education-item h3 {
+  color: #1a1a1a;
+}
+
+body.theme-light .contact-method a {
+  color: #333;
+}
+
+body.theme-light .contact-method a:hover {
+  color: #000;
+}
+
+body.theme-light .tag {
+  background: rgba(0, 0, 0, 0.08);
+  color: #1a1a1a;
+}
+
+body.theme-light .project-detail-image {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.theme-light .github-link {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+body.theme-light .github-link:hover {
+  background: #333;
+}
+
+body.theme-light .footer {
+  background: #eee;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  color: #444;
+}
+
+body.theme-light .footer .footer-social a {
+  color: #333;
+}
+
+body.theme-light .footer .footer-social a:hover {
+  opacity: 1;
+}
+
+/* Homepage projects section — light theme (readable text) */
+body.theme-light .portfolio-content {
+  background: #f5f5f5;
+  color: #1a1a1a;
+}
+
+body.theme-light .portfolio-content .content-section h2 {
+  color: #111;
+}
+
+body.theme-light .portfolio-content .content-section p,
+body.theme-light .portfolio-content .content-section a {
+  color: #444;
+}
+
+body.theme-light .portfolio-content .content-section a:hover {
+  color: #000;
+}
+
+body.theme-light .portfolio-content .project-card,
+body.theme-light .project-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.theme-light .portfolio-content .project-title,
+body.theme-light .project-title {
+  color: #111;
+}
+
+body.theme-light .portfolio-content .project-description,
+body.theme-light .project-description {
+  color: #444;
+}
+
+body.theme-light .portfolio-content .project-card .tag,
+body.theme-light .project-card .tag {
+  background: rgba(0, 0, 0, 0.08);
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  body.theme-light .container,
+  body.theme-light .about-container,
+  body.theme-light .contact-container,
+  body.theme-light .resume-container {
     padding: 2rem 1rem;
   }
 }
