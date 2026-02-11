@@ -135,27 +135,34 @@ body.theme-light .sticky-header.is-condensed #theme-toggle img {
   filter: none;
 }
 
+/* Logo: KWAMENA (large bold) + PORTFOLIO (smaller, slight indent) — match reference */
 .sticky-header .header-logo {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.02em;
-  line-height: 1.2;
+  line-height: 1.25;
+  text-transform: uppercase;
   text-shadow: var(--nav-text-shadow);
 }
 
 .sticky-header .header-logo span:first-child {
   display: block;
   font-size: 1em;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .sticky-header .header-logo span:last-child {
   display: block;
-  font-size: 0.45em;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  opacity: 0.95;
+  font-size: 0.5em;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  margin-top: 0.1em;
+  margin-left: 0.12em;
+  opacity: 1;
 }
 
 .sticky-header .header-nav {
